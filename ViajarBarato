@@ -1,0 +1,57 @@
+import React, { useState, useEffect, createContext, useContext, useCallback } from 'react';
+                La plataforma de viajes compartidos más económica y segura de España.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li><button onClick={() => setCurrentView('home')} className="hover:text-white transition-colors">Inicio</button></li>
+                <li><button onClick={() => setCurrentView('how-it-works')} className="hover:text-white transition-colors">Cómo funciona</button></li>
+                <li><button onClick={() => setCurrentView('trips')} className="hover:text-white transition-colors">Buscar viajes</button></li>
+                <li><button onClick={() => setCurrentView('legal')} className="hover:text-white transition-colors">Información legal</button></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Rutas Populares</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>Madrid - Barcelona</li>
+                <li>Valencia - Sevilla</li>
+                <li>Bilbao - Zaragoza</li>
+                <li>Málaga - Granada</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li><i className="fas fa-envelope mr-2"></i>hola@viajabarato.es</li>
+                <li><i className="fas fa-phone mr-2"></i>+34 912 345 678</li>
+                <li><i className="fas fa-map-marker-alt mr-2"></i>Madrid, España</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+            <p>&copy; 2023 ViajaBarato S.L. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+// All other components (HomeView, LoginView, RegisterView, etc.) remain the same
+// The only difference is in the data service layer (TripService) and auth layer
+
+// App Wrapper with all providers
+export default function AppWrapper() {
+  return (
+    <AuthProvider>
+      <UserProfileProvider>
+        <App />
+      </UserProfileProvider>
+    </AuthProvider>
+  );
+}
